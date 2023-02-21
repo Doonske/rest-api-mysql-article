@@ -4,7 +4,7 @@ const config = {
     host: "localhost",
     user: "root",
     password: "",
-    database: "restapitest",
+    database: "testdaten",
   },
   listPerPage: 10,
 };

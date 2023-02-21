@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const programmingLanguagesRouter = require("./routes/programmingLanguages");
+const entriesRouter = require("./routes/entries");
 
 app.use(express.json());
 app.use(
@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.json({ message: "ok" });
 });
 
-app.use("/programming-languages", programmingLanguagesRouter);
+app.use("/entries", entriesRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
