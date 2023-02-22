@@ -17,8 +17,43 @@ async function getMultiple(page = 1) {
   };
 }
 
+async function getOne(id) {
+  const row = await db.query(
+    "SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, address, size, comment, shortHand FROM entries WHERE id = ?", [id]
+  );
+  const data = helper.emptyOrRows(row);
+
+  if (data.length === 0) {
+    const error = new Error(`Entry with id ${id} not found`);
+    error.code = 'Not Found'
+    throw error;
+  }
+
+  return data[0];
+}
+
+
 async function create(entries) {
+  // Überprüfung der Anfrage
+  const requiredFields = ['createdOn', 'createdBy', 'softwareVersion', 'customer', 'entry'];
+  for (const field of requiredFields) {
+    if (!entries[field]) {
+      let error = new Error(`Missing required field: ${field}`)
+      error.code = 'ER_BAD_FIELD_ERROR'
+      throw error;
+    }
+  }
+  const { entry } = entries;
+  const requiredEntryFields = ['type', 'address', 'size', 'comment', 'shortHand'];
+  for (const field of requiredEntryFields) {
+    if (!entry[field]) {
+      let error = new Error(`Missing required field: ${field}`)
+      error.code = 'ER_BAD_FIELD_ERROR'
+      throw error;
+    }
+  }
   message = 'Entry created successfully';
+  //SQL Prepared Statement - verhindert SQL Injections
   const query = 'INSERT INTO entries (createdOn, createdBy, softwareVersion, customer, entry_type, address, size, comment, shortHand) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
   db.query(query, [
     entries.createdOn,
@@ -32,13 +67,33 @@ async function create(entries) {
     entries.entry.shortHand
   ], (err, result) => {
     if (err) {
-      console.log("Err: ".err);
-      message = 'Error creating entry';
+      message = 'Error creating entry:'.err;
     }});
   return { message };
 }
 
 async function update(id, entries) {
+// Check if entry exists
+const entryExists = await getOne(id);
+// Check if required fields are present
+const requiredFields = ['createdOn', 'createdBy', 'softwareVersion', 'customer', 'entry'];
+for (const field of requiredFields) {
+if (!entries[field]) {
+const error = new Error('Missing required field: ${field}');
+error.code = 'ER_BAD_FIELD_ERROR';
+throw error;
+}
+}
+// Check if required entry fields are present
+const { entry } = entries;
+const requiredEntryFields = ['type', 'address', 'size', 'comment', 'shortHand'];
+for (const field of requiredEntryFields) {
+if (!entry[field]) {
+const error = new Error('Missing required field: ${field}');
+error.code = 'ER_BAD_FIELD_ERROR';
+throw error;
+}
+}
     message = 'Entry updated successfully';
     const query = 'UPDATE entries SET createdOn=?, createdBy=?, softwareVersion=?, customer=?, entry_type=?, address=?, size=?, comment=?, shortHand=? WHERE id=?';
     db.query(query, [
@@ -62,6 +117,14 @@ async function update(id, entries) {
 }
 
 async function remove(id) {
+  const row = await db.query(
+    `DELETE FROM entries WHERE id = ?`, [id]
+  );
+  return row.affectedRows ? id : null;
+}
+
+
+/*async function remove(id) {
   const result = await db.query(
     `DELETE FROM entries WHERE id=${id}`
   );
@@ -73,10 +136,11 @@ async function remove(id) {
   }
 
   return { message };
-}
+}*/
 
 module.exports = {
   getMultiple,
+  getOne,
   create,
   update,
   remove,

@@ -17,7 +17,7 @@ const logger = (req, res, next) => {
 router.use(logger);
 
 
-/* GET programming languages. */
+/* GET - alle Einträge */
 router.get("/", async function (req, res, next) {
   try {
     res.json(await entries.getMultiple(req.query.page));
@@ -27,34 +27,91 @@ router.get("/", async function (req, res, next) {
   }
 });
 
-/* POST programming language */
-router.post("/", async function (req, res, next) {
+router.get("/:id", async function (req, res) {
   try {
-    res.json(await entries.create(req.body));
+  res.json(await entries.getOne(req.params.id));
   } catch (err) {
-    console.error(`Error while creating programming language`, err.message);
-    next(err);
+    if (err.code === 'ER_BAD_FIELD_ERROR') {
+      resolveErrors(res, 'Missing property in request', 400)
+    } else if (err.code === 'Not Found') {
+      resolveErrors(res, 'Entry with this ID not found', 404)
+    } else {
+      // Internal Server Error - Status Code 500
+      resolveErrors(res, { error: err.message });
+    }
   }
 });
 
-/* PUT programming language */
+/* POST - neuer Eintrag */
+router.post("/", async function (req, res, next) {
+  try {
+  res.json(await entries.create(req.body));
+  } catch (err) {
+    if (err.code === 'ER_BAD_FIELD_ERROR') {
+      resolveErrors(res, 'Missing property in request', 400)
+    } else if (err.code === 'ER_DUP_ENTRY') {
+      //res.status(409).json({ error: 'Entry with this ID already exists' });
+      resolveErrors(res, 'Entry with this ID already exist', 409)
+    } else {
+      // Internal Server Error - Status Code 500
+      resolveErrors(res, { error: err.message });
+    }
+  }
+});
+
+/* PUT - besteheden Eintrag bearbeiten */
 router.put("/:id", async function (req, res, next) {
+  try {
+  const updatedEntry = await entries.update(req.params.id, req.body);
+  res.json(updatedEntry);
+  } catch (err) {
+  if (err.code === "ER_BAD_FIELD_ERROR") {
+  resolveErrors(res, "Missing property in request", 400);
+  } else if (err.code === "ER_DUP_ENTRY") {
+  resolveErrors(res, "Entry with this ID already exists", 409);
+  } else if (err.code === "Not Found") {
+  resolveErrors(res, 'Entry with this id not found', 404);
+  } else {
+  resolveErrors(res, { error: err.message });
+  }
+  }
+});
+
+/*router.put("/:id", async function (req, res, next) {
   try {
     res.json(await entries.update(req.params.id, req.body));
   } catch (err) {
     console.error(`Error while updating programming language`, err.message);
     next(err);
   }
-});
+});*/
 
-/* DELETE programming language */
+/* DELETE - Eintrag löschen */
 router.delete("/:id", async function (req, res, next) {
+  const { id } = req.params;
   try {
-    res.json(await entries.remove(req.params.id));
+    const deletedEntry = await entries.remove(id);
+    if (!deletedEntry) {
+      const error = new Error(`Entry with id ${id} not found`);
+      error.statusCode = 404;
+      throw error;
+    }
+    res.json(deletedEntry);
   } catch (err) {
-    console.error(`Error while deleting programming language`, err.message);
+    console.error(`Error while deleting entry`, err.message);
     next(err);
   }
 });
+
+
+
+//Sendet den angegebene Fehlermeldung und wenn ang. einen Fehlercode ansonsten 500 - Internal Server error 
+function resolveErrors(res, message, code) {
+  res.statusCode = code ? code : 500;
+  res.send(message);
+  res.end();
+  return;
+}
+
 
 module.exports = router;
