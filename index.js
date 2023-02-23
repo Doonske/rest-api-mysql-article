@@ -14,6 +14,9 @@ app.get("/", (req, res) => {
   res.json({ message: "ok" });
 });
 
+
+
+
 app.use("/entries", entriesRouter);
 
 /* Error handler middleware */

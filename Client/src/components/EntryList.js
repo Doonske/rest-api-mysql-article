@@ -1,23 +1,30 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 function EntryList() {
   const [entries, setEntries] = useState([]);
 
   useEffect(() => {
-    fetch("/entries")
-      .then((response) => response.json())
-      .then((data) => setEntries(data))
-      .catch((error) => console.error(error));
+    fetch('/entries')
+      .then(res => res.json())
+      .then(data => setEntries(data))
+      .catch(err => console.log(err));
   }, []);
 
   return (
     <div>
-      <h1>Entries</h1>
+      <h2>Entries</h2>
       <ul>
-        {entries.map((entry) => (
+        {entries.map(entry => (
           <li key={entry.id}>
-            <h2>{entry.title}</h2>
-            <p>{entry.body}</p>
+            <p>Created on: {entry.createdOn}</p>
+            <p>Created by: {entry.createdBy}</p>
+            <p>Software version: {entry.softwareVersion}</p>
+            <p>Customer: {entry.customer}</p>
+            <p>Entry type: {entry.entry_type}</p>
+            <p>Address: {entry.address}</p>
+            <p>Size: {entry.size}</p>
+            <p>Comment: {entry.comment}</p>
+            <p>Short hand: {entry.shortHand}</p>
           </li>
         ))}
       </ul>
