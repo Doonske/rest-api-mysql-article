@@ -4,27 +4,28 @@ function EntryList() {
   const [entries, setEntries] = useState([]);
 
   useEffect(() => {
+    // Fetch entries from backend endpoint
     fetch('/entries')
-      .then(res => res.json())
+      .then(response => response.json())
       .then(data => setEntries(data))
-      .catch(err => console.log(err));
+      .catch(error => console.error(error));
   }, []);
 
   return (
     <div>
-      <h2>Entries</h2>
+      <h1>All Entries</h1>
       <ul>
         {entries.map(entry => (
           <li key={entry.id}>
-            <p>Created on: {entry.createdOn}</p>
-            <p>Created by: {entry.createdBy}</p>
-            <p>Software version: {entry.softwareVersion}</p>
+            <p>Created On: {entry.createdOn}</p>
+            <p>Created By: {entry.createdBy}</p>
+            <p>Software Version: {entry.softwareVersion}</p>
             <p>Customer: {entry.customer}</p>
-            <p>Entry type: {entry.entry_type}</p>
+            <p>Entry Type: {entry.entry_type}</p>
             <p>Address: {entry.address}</p>
             <p>Size: {entry.size}</p>
             <p>Comment: {entry.comment}</p>
-            <p>Short hand: {entry.shortHand}</p>
+            <p>Short Hand: {entry.shortHand}</p>
           </li>
         ))}
       </ul>
@@ -33,3 +34,5 @@ function EntryList() {
 }
 
 export default EntryList;
+
+
