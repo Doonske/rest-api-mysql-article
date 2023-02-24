@@ -3,22 +3,45 @@ import axios from 'axios';
 
 function EntryList() {
 
-  const apiCall = () => {
-    axios.get('http://localhost:3000/entries').then((data) => {
-      console.log(data);
-    })
+const [entries, setEntries] = useState([]);
+
+const apiCall = () => {
+axios.get('http://localhost:3000/entries').then((data) => {
+  setEntries(data.data.data);
+})
+}
+
+useEffect(() => {
+apiCall();
+}, []);
+
+return (
+  <div className='App'>
+  <header className='App-header'>
+  <h1>All Entries</h1>
+  {entries.length > 0 ?
+  <ul>
+    {entries.map(entry => (
+    <li key={entry.id}>
+    <p>Created On: {entry.createdOn}</p>
+    <p>Created By: {entry.createdBy}</p>
+    <p>Software Version: {entry.softwareVersion}</p>
+    <p>Customer: {entry.customer}</p>
+    <p>Entry Type: {entry.entry_type}</p>
+    <p>Address: {entry.address}</p>
+    <p>Size: {entry.size}</p>
+    <p>Comment: {entry.comment}</p>
+    <p>Short Hand: {entry.shortHand}</p>
+    </li>
+    ))}
+  </ul> :
+  <p>Loading...</p>
   }
+  </header>
+  </div>
+);
 
-  return (
-    <div className='App'>
-    <header onLoad={apiCall} className='App-header'>
 
-    <p>All Entries</p>
-    <button onClick={apiCall}>Get data</button>
-      
-      </header>
-    </div>
-    );
 
   /*const [entries, setEntries] = useState([]);
 
