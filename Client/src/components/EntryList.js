@@ -2,7 +2,25 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function EntryList() {
-  const [entries, setEntries] = useState([]);
+
+  const apiCall = () => {
+    axios.get('http://localhost:3000/entries').then((data) => {
+      console.log(data);
+    })
+  }
+
+  return (
+    <div className='App'>
+    <header onLoad={apiCall} className='App-header'>
+
+    <p>All Entries</p>
+    <button onClick={apiCall}>Get data</button>
+      
+      </header>
+    </div>
+    );
+
+  /*const [entries, setEntries] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -31,7 +49,7 @@ function EntryList() {
         ))}
       </ul>
     </div>
-  );
+  );*/
 }
 
 export default EntryList;
