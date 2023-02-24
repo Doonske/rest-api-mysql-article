@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function EntryList() {
   const [entries, setEntries] = useState([]);
 
   useEffect(() => {
-    // Fetch entries from backend endpoint
-    fetch('/entries')
-      .then(response => response.json())
-      .then(data => setEntries(data))
-      .catch(error => console.error(error));
+    async function fetchData() {
+      const response = await axios.get('/entries');
+      setEntries(response.data.data);
+    }
+    fetchData();
   }, []);
 
   return (
@@ -17,15 +18,15 @@ function EntryList() {
       <ul>
         {entries.map(entry => (
           <li key={entry.id}>
-            <p>Created On: {entry.createdOn}</p>
-            <p>Created By: {entry.createdBy}</p>
-            <p>Software Version: {entry.softwareVersion}</p>
-            <p>Customer: {entry.customer}</p>
-            <p>Entry Type: {entry.entry_type}</p>
-            <p>Address: {entry.address}</p>
-            <p>Size: {entry.size}</p>
-            <p>Comment: {entry.comment}</p>
-            <p>Short Hand: {entry.shortHand}</p>
+          <p>Created On: {entry.createdOn}</p>
+          <p>Created By: {entry.createdBy}</p>
+          <p>Software Version: {entry.softwareVersion}</p>
+          <p>Customer: {entry.customer}</p>
+          <p>Entry Type: {entry.entry_type}</p>
+          <p>Address: {entry.address}</p>
+          <p>Size: {entry.size}</p>
+          <p>Comment: {entry.comment}</p>
+          <p>Short Hand: {entry.shortHand}</p>
           </li>
         ))}
       </ul>
@@ -34,5 +35,6 @@ function EntryList() {
 }
 
 export default EntryList;
+
 
 
