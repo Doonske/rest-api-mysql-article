@@ -6,7 +6,7 @@ function EntryList() {
 const [entries, setEntries] = useState([]);
 
 const apiCall = () => {
-axios.get('http://localhost:3000/entries').then((data) => {
+axios.get('http://localhost:3001/entries').then((data) => {
   setEntries(data.data.data);
 })
 }
