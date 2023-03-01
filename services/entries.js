@@ -5,7 +5,7 @@ const config = require("../config");
 async function getMultiple(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
-    `SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, address, size, comment, shortHand
+    `SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_size, entry_comment, entry_shortHand
     FROM entries LIMIT ${offset},${config.listPerPage}`
   );
   const data = helper.emptyOrRows(rows);
@@ -19,7 +19,7 @@ async function getMultiple(page = 1) {
 
 async function getOne(id) {
   const row = await db.query(
-    "SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, address, size, comment, shortHand FROM entries WHERE id = ?", [id]
+    "SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_size, entry_comment, entry_shortHand FROM entries WHERE id = ?", [id]
   );
   const data = helper.emptyOrRows(row);
 
@@ -54,7 +54,7 @@ async function create(entries) {
   }
   message = 'Entry created successfully';
   //SQL Prepared Statement - verhindert SQL Injections
-  const query = 'INSERT INTO entries (createdOn, createdBy, softwareVersion, customer, entry_type, address, size, comment, shortHand) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+  const query = 'INSERT INTO entries (createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_size, entry_comment, entry_shortHand) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
   db.query(query, [
     entries.createdOn,
     entries.createdBy,
@@ -95,7 +95,7 @@ throw error;
 }
 }
     message = 'Entry updated successfully';
-    const query = 'UPDATE entries SET createdOn=?, createdBy=?, softwareVersion=?, customer=?, entry_type=?, address=?, size=?, comment=?, shortHand=? WHERE id=?';
+    const query = 'UPDATE entries SET createdOn=?, createdBy=?, softwareVersion=?, customer=?, entry_type=?, entry_address=?, entry_size=?, entry_comment=?, entry_shortHand=? WHERE id=?';
     db.query(query, [
       entries.createdOn,
       entries.createdBy,
