@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const programmingLanguages = require("../services/entries");
 const entries = require("../services/entries");
 const bodyParser = require('body-parser');
 
@@ -22,7 +21,7 @@ router.get("/", async function (req, res, next) {
   try {
     res.json(await entries.getMultiple(req.query.page));
   } catch (err) {
-    console.error(`Error while getting programming languages `, err.message);
+    console.error(`Error while getting entries `, err.message);
     next(err);
   }
 });

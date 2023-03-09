@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3001;
 const entriesRouter = require("./routes/entries");
+const interestRouter = require("./routes/interest");
 var cors = require('cors');
 
 app.use(cors());
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 
 
 app.use("/entries", entriesRouter);
+app.use("/interest", interestRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
@@ -34,5 +36,5 @@ app.use((err, req, res, next) => {
 
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Backemd listening at http://localhost:${port}`);
 });

@@ -123,21 +123,6 @@ async function remove(id) {
   return row.affectedRows ? id : null;
 }
 
-
-/*async function remove(id) {
-  const result = await db.query(
-    `DELETE FROM entries WHERE id=${id}`
-  );
-
-  let message = "Error in deleting entry";
-
-  if (result.affectedRows) {
-    message = "entry deleted successfully";
-  }
-
-  return { message };
-}*/
-
 module.exports = {
   getMultiple,
   getOne,

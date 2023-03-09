@@ -28,10 +28,10 @@ return (
     <p>Software Version: {entry.softwareVersion}</p>
     <p>Customer: {entry.customer}</p>
     <p>Entry Type: {entry.entry_type}</p>
-    <p>Address: {entry.address}</p>
-    <p>Size: {entry.size}</p>
-    <p>Comment: {entry.comment}</p>
-    <p>Short Hand: {entry.shortHand}</p>
+    <p>Address: {entry.entry_address}</p>
+    <p>Size: {entry.entry_size}</p>
+    <p>Comment: {entry.entry_comment}</p>
+    <p>Short Hand: {entry.entry_shortHand}</p>
     </li>
     ))}
   </ul> :
