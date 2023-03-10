@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const entries = require("../services/entries");
 const interestService = require("../services/interest");
 
 const logger = (req, res, next) => {
