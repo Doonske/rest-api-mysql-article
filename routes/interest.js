@@ -3,6 +3,15 @@ const router = express.Router();
 const entries = require("../services/entries");
 const interestService = require("../services/interest");
 
+const logger = (req, res, next) => {
+  console.log(`Received Request ${new Date(Date.now()).toLocaleString('de-DE')}`);
+  console.log('HTTP METHOD', req.method);
+  console.log('HTTP BODY', req.body);
+  console.log('URL PARAMETER', req.params);
+  next();
+}
+router.use(logger);
+
 // Anforderung: Für ein einzelnes Objekt können Sie sich nur die Anzahl der Interessenten ausgeben
 router.get("/:id", async function (req, res) {
   try {
