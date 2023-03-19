@@ -59,7 +59,7 @@ router.delete("/:id", async function (req, res){
   }
 });
 
-  //Sendet den angegebene Fehlermeldung und wenn angeg. einen Fehlercode ansonsten 500 - Internal Server error 
+  //Sendet die angegebene Fehlermeldung und wenn angegeben einen Fehlercode, ansonsten 500 - Internal Server error 
 function resolveErrors(res, message, code) {
   res.statusCode = code ? code : 500;
   res.send(message);
