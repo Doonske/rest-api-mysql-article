@@ -5,7 +5,7 @@ const config = require("../config");
 async function getMultiple(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
-    `SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_size, entry_comment, entry_shortHand
+    `SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_size, entry_comment, entry_shortHand, interest_count
     FROM entries LIMIT ${offset},${config.listPerPage}`
   );
   const data = helper.emptyOrRows(rows);
@@ -19,7 +19,7 @@ async function getMultiple(page = 1) {
 
 async function getOne(id) {
   const row = await db.query(
-    "SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_size, entry_comment, entry_shortHand FROM entries WHERE id = ?", [id]
+    "SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_size, entry_comment, entry_shortHand, interest_count FROM entries WHERE id = ?", [id]
   );
   const data = helper.emptyOrRows(row);
 
