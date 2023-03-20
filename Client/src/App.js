@@ -1,6 +1,6 @@
 import './App.css';
 import EntryList from "./components/EntryList";
-
+import New_entry from "./components/New_entry";
 
 
 
@@ -8,7 +8,7 @@ function App() {
   return (
     
       <div>
-        <EntryList />
+        <New_entry />
       </div>
     );
 }

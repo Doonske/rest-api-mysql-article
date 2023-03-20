@@ -21,7 +21,7 @@ return (
     <header className='App-header'>
       <h1>All Entries</h1>
       {entries.length > 0 ?
-        <ul className='entry-list'>
+        <ul >
 
           {entries.map(entry => (
             <li key={entry.id} className='entry-item'>
