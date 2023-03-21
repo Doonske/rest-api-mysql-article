@@ -21,7 +21,7 @@ async function getInterestById(id) {
 async function getInterestCount(id) {
 
     const row = await db.query(
-    "SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_size, entry_comment, entry_shortHand, interest_count FROM entries WHERE id = ?", [id]
+    "SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_postal, entry_city,  entry_size, entry_comment, entry_shortHand, interest_count FROM entries WHERE id = ?", [id]
     );
     const data = helper.emptyOrRows(row);
 
@@ -33,14 +33,6 @@ async function getInterestCount(id) {
 
     return data[0];
 }
-    
-/*async function addInterest(id) {
-    const result = await db.query(
-    "UPDATE entries SET interest_count = interest_count + 1 WHERE id = ?",
-    [id]
-    );
-    return result.affectedRows ? true : false;
-*/
 
 async function addInterest(id) {
     const result = await db.query(

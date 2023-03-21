@@ -5,7 +5,7 @@ const config = require("../config");
 async function getMultiple(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
-    `SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_size, entry_comment, entry_shortHand, interest_count
+    `SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_postal, entry_city, entry_size, entry_comment, entry_shortHand, interest_count
     FROM entries LIMIT ${offset},${config.listPerPage}`
   );
   const data = helper.emptyOrRows(rows);
@@ -19,7 +19,7 @@ async function getMultiple(page = 1) {
 
 async function getOne(id) {
   const row = await db.query(
-    "SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_size, entry_comment, entry_shortHand, interest_count FROM entries WHERE id = ?", [id]
+    "SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_postal, entry_city, entry_size, entry_comment, entry_shortHand, interest_count FROM entries WHERE id = ?", [id]
   );
   const data = helper.emptyOrRows(row);
 
@@ -32,7 +32,6 @@ async function getOne(id) {
   return data[0];
 }
 
-
 async function create(entries) {
   // Überprüfung der Anfrage
   const requiredFields = ['createdOn', 'createdBy', 'softwareVersion', 'customer', 'entry'];
@@ -44,7 +43,7 @@ async function create(entries) {
     }
   }
   const { entry } = entries;
-  const requiredEntryFields = ['type', 'address', 'size', 'comment', 'shortHand'];
+  const requiredEntryFields = ['type', 'address', 'postal', 'city', 'size', 'comment', 'shortHand'];
   for (const field of requiredEntryFields) {
     if (!entry[field]) {
       let error = new Error(`Missing required field: ${field}`)
@@ -54,7 +53,7 @@ async function create(entries) {
   }
   message = 'Entry created successfully';
   //SQL Prepared Statement - verhindert SQL Injections
-  const query = 'INSERT INTO entries (createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_size, entry_comment, entry_shortHand) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+  const query = 'INSERT INTO entries (createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_postal, entry_city, entry_size, entry_comment, entry_shortHand) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
   db.query(query, [
     entries.createdOn,
     entries.createdBy,
@@ -62,6 +61,8 @@ async function create(entries) {
     entries.customer,
     entries.entry.type,
     entries.entry.address,
+    entries.entry.postal,
+    entries.entry.city,
     entries.entry.size,
     entries.entry.comment,
     entries.entry.shortHand
@@ -86,7 +87,7 @@ throw error;
 }
 // Check if required entry fields are present
 const { entry } = entries;
-const requiredEntryFields = ['type', 'address', 'size', 'comment', 'shortHand'];
+const requiredEntryFields = ['type', 'address', 'postal', 'city', 'size', 'comment', 'shortHand'];
 for (const field of requiredEntryFields) {
 if (!entry[field]) {
 const error = new Error('Missing required field: ${field}');
@@ -95,7 +96,7 @@ throw error;
 }
 }
     message = 'Entry updated successfully';
-    const query = 'UPDATE entries SET createdOn=?, createdBy=?, softwareVersion=?, customer=?, entry_type=?, entry_address=?, entry_size=?, entry_comment=?, entry_shortHand=? WHERE id=?';
+    const query = 'UPDATE entries SET createdOn=?, createdBy=?, softwareVersion=?, customer=?, entry_type=?, entry_address=?, entry_postal=?, entry_city=?, entry_size=?, entry_comment=?, entry_shortHand=? WHERE id=?';
     db.query(query, [
       entries.createdOn,
       entries.createdBy,
@@ -103,6 +104,8 @@ throw error;
       entries.customer,
       entries.entry.type,
       entries.entry.address,
+      entries.entry.postal,
+      entries.entry.city,
       entries.entry.size,
       entries.entry.comment,
       entries.entry.shortHand,

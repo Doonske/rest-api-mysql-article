@@ -76,15 +76,6 @@ router.put("/:id", async function (req, res, next) {
   }
 });
 
-/*router.put("/:id", async function (req, res, next) {
-  try {
-    res.json(await entries.update(req.params.id, req.body));
-  } catch (err) {
-    console.error(`Error while updating programming language`, err.message);
-    next(err);
-  }
-});*/
-
 /* DELETE - Eintrag löschen */
 router.delete("/:id", async function (req, res, next) {
   const { id } = req.params;
