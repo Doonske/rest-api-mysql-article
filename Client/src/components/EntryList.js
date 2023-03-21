@@ -16,34 +16,44 @@ useEffect(() => {
 apiCall();
 }, []);
 
+const handleDelete = (id) => {
+  axios.delete(`http://localhost:3001/entries/${id}`).then(() => {
+    apiCall();
+  });
+}
+
 return (
-  <div className='App'>
+  
     <header className='App-header'>
       <h1>All Entries</h1>
       {entries.length > 0 ?
         <ul >
-
+         
           {entries.map(entry => (
             <li key={entry.id} className='entry-item'>
               <div className='entry-box'>
-              <img className='entry-image' src={`http://localhost:3001/entries/image/${entry.id}`} alt={`Entry ${entry.id}`} />
-              <h2 className='entry-title'>{entry.entry_shortHand}</h2>
+              <img src={`http://localhost:3001/entries/image/${entry.id}`} alt={`Entry ${entry.id}`} />
+              <div className='entry-title'><h4>{entry.entry_shortHand}</h4></div>
                 
-                <p className='entry-text'>Customer: {entry.customer}</p>
-                <p className='entry-text'>Entry Type: {entry.entry_type}</p>
-                <p className='entry-text'>Addresse: {entry.entry_address}</p>
-                <p className='entry-text'>Groesse: {entry.entry_size}</p>
-                <p className='entry-text'>Comment: {entry.entry_comment}</p>
-                <p className='entry-text'>Interesenten: {entry.interest_count}</p>
-
+                <div className='entry-text'>Customer: {entry.customer}</div>
+                <div className='entry-text'>Entry Type: {entry.entry_type}</div>
+                <div className='entry-text'>Addresse: {entry.entry_address}</div>
+                <div className='entry-text'>Groesse: {entry.entry_size}</div>
+                <div className='entry-text'>Comment: {entry.entry_comment}</div>
+                <div className='entry-text'>Interesenten: {entry.interest_count}</div>
+                <div className='entry-actions'>
+                  <button onClick={() => handleDelete(entry.id)}>Delete</button>
+                  <button>Edit</button>
+                </div>
               </div>
+              
             </li>
           ))}
         </ul> :
         <p>Loading...</p>
       }
     </header>
-  </div>
+  
 );
 
 }
