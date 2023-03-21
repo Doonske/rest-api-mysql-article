@@ -46,12 +46,13 @@ function New_entry() {
   };
 
   return (
-    <div className='App'>
+    
       <header className='App-header'>
-        <h1>All Entries</h1>
+        <h1>Neues Objekt hinzufügen</h1>
+        <div className='formular'>
         <form onSubmit={handleSubmit}>
           <label>
-            Entry Short Hand:
+            Titel:
             <input type="text" name="entry_shortHand" value={newEntry.entry_shortHand} onChange={handleInputChange} />
           </label>
           <label>
@@ -63,22 +64,25 @@ function New_entry() {
             <input type="text" name="entry_type" value={newEntry.entry_type} onChange={handleInputChange} />
           </label>
           <label>
-            Entry Address:
+            Adresse:
             <input type="text" name="entry_address" value={newEntry.entry_address} onChange={handleInputChange} />
           </label>
           <label>
-            Entry Size:
+            Größe in m²:
             <input type="text" name="entry_size" value={newEntry.entry_size} onChange={handleInputChange} />
           </label>
           <label>
             Entry Comment:
             <input type="text" name="entry_comment" value={newEntry.entry_comment} onChange={handleInputChange} />
           </label>
-          <button type="submit">Submit</button>
+          <div className='formular_button'>
+          <button type="submit">Erstellen</button>
+          </div>
         </form>
+        </div>
         
 </header>
-</div>
+
 );
 }
 

@@ -25,7 +25,7 @@ const handleDelete = (id) => {
 return (
   
     <header className='App-header'>
-      <h1>All Entries</h1>
+      <h1>Übersicht</h1>
       {entries.length > 0 ?
         <ul >
          
