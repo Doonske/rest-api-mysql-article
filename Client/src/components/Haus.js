@@ -44,7 +44,7 @@ return (
                 <div className='entry-title'><h4>{entry.entry_shortHand}</h4></div>
                 <div className='entry-text'>Customer: {entry.customer}</div>
                 <div className='entry-text'>Entry Type: {entry.entry_type}</div>
-                <div className='entry-text'>Address: {entry.entry_address}</div>
+                <div className='entry-text'>Addresse: {entry.entry_address}, {entry.entry_postal} {entry.entry_city} </div>
                 <div className='entry-text'>Size: {entry.entry_size}</div>
                 <div className='entry-text'>Comment: {entry.entry_comment}</div>
                 <div className='entry-text'>Interested Count: {entry.interest_count}</div>
