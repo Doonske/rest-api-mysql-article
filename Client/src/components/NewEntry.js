@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './components.css';
 
-function New_entry() {
+function NewEntry() {
   const [entries, setEntries] = useState([]);
   const [newEntry, setNewEntry] = useState({
     entry_shortHand: '',
@@ -86,4 +86,4 @@ function New_entry() {
 );
 }
 
-export default New_entry;
+export default NewEntry;

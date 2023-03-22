@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './components.css';
+import { useNavigate } from 'react-router-dom';
 
 function EntryList() {
 
 const [entries, setEntries] = useState([]);
+const navigate = useNavigate();
 
 const apiCall = () => {
 axios.get('http://localhost:3001/entries').then((data) => {
@@ -26,6 +28,14 @@ return (
   
     <header className='App-header'>
       <h1>Übersicht</h1>
+
+      <div class='nav-buttons'>
+        <button onClick={() => navigate('/')}>Alles anzeigen</button> {/* Button um alle Einträge anzuzeigen */}
+        <button onClick={() => navigate('/houses')}>Häuser</button> {/* Button zu Häusern */}
+        <button onClick={() => navigate('/apartments')}>Wohnungen</button> {/* Button zu Wohnungen */}
+        <button onClick={() => navigate('/construction-sides')}>Bauplätze</button> {/* Button zu Wohnungen */}
+      </div>
+
       {entries.length > 0 ?
         <ul >
          
