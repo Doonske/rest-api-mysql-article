@@ -4,6 +4,7 @@ const port = 3001;
 const entriesRouter = require("./routes/entries");
 const interestRouter = require("./routes/interest");
 const imageRouter = require("./routes/image");
+const searchRouter = require("./routes/search");
 var cors = require('cors');
 
 app.use(cors());
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 app.use("/entries", entriesRouter);
 app.use("/entries/interest", interestRouter);
 app.use("/entries/image", imageRouter);
+app.use("/entries/search", searchRouter)
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
