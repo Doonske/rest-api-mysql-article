@@ -13,7 +13,6 @@ const logger = (req, res, next) => {
   router.use(logger);
 
 
-
   router.get('/:key', async (req, res) => {
     const query = req.params.key;
   
@@ -29,7 +28,6 @@ const logger = (req, res, next) => {
       res.status(500).send('Server error');
     }
   });
-  
 
   module.exports = router;
   

@@ -5,6 +5,7 @@ const entriesRouter = require("./routes/entries");
 const interestRouter = require("./routes/interest");
 const imageRouter = require("./routes/image");
 const searchRouter = require("./routes/search");
+const filterRouter = require("./routes/filter");
 var cors = require('cors');
 
 app.use(cors());
@@ -23,7 +24,8 @@ app.get("/", (req, res) => {
 app.use("/entries", entriesRouter);
 app.use("/entries/interest", interestRouter);
 app.use("/entries/image", imageRouter);
-app.use("/entries/search", searchRouter)
+app.use("/search", searchRouter)
+app.use("/filter", filterRouter)
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
@@ -33,9 +35,6 @@ app.use((err, req, res, next) => {
 
   return;
 });
-
-
-
 
 app.listen(port, () => {
   console.log(`Backend listening at http://localhost:${port}`);
