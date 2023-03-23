@@ -26,7 +26,8 @@ router.post('/', async (req, res) => {
             size: 45,
             comment: 'Schöne Wohnung in guter Lage',
             shortHand: 'Musterstraße 1, 45qm'
-          }
+            },
+        image_path: 'public/images/wall-gb7deaed0d_640.jpg'
       },
       {
         createdOn: Date.now(),
@@ -41,7 +42,8 @@ router.post('/', async (req, res) => {
             size: 120,
             comment: 'Großes Haus mit Garten',
             shortHand: 'Hauptstraße 2, 120qm'
-          }
+            },
+        image_path: 'public/images/wall-gb7deaed0d_640.jpg'
       },
       {
         createdOn: Date.now(),
@@ -56,13 +58,14 @@ router.post('/', async (req, res) => {
             size: 250,
             comment: 'Großes Bauprojekt',
             shortHand: 'Baustelle 3'
-            }
+            },
+        image_path: 'public/images/wall-gb7deaed0d_640.jpg'
     }
     ];
   
     try {
       for (const entry of testEntries) {
-        const query = 'INSERT INTO entries (createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_postal, entry_city, entry_size, entry_comment, entry_shortHand) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+        const query = 'INSERT INTO entries (createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_postal, entry_city, entry_size, entry_comment, entry_shortHand, image_path) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
         db.query(query, [
         entry.createdOn,
         entry.createdBy,
@@ -74,7 +77,8 @@ router.post('/', async (req, res) => {
         entry.entry.city,
         entry.entry.size,
         entry.entry.comment,
-        entry.entry.shortHand
+        entry.entry.shortHand,
+        entry.image_path
         ]);
       }
       res.send('Test data created successfully');
