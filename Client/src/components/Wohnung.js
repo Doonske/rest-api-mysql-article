@@ -28,7 +28,7 @@ return (
     <header className='App-header'>
         <h1>Wohnungen</h1>
 
-        <div class='nav-buttons'>
+        <div class='nav-button-zurück'>
         <button onClick={() => navigate('/')}>Alles anzeigen</button> {/* Button um alle Einträge anzuzeigen */}
         <button onClick={() => navigate('/houses')}>Häuser</button> {/* Button zu Häusern */}
         <button onClick={() => navigate('/apartments')}>Wohnungen</button> {/* Button zu Wohnungen */}

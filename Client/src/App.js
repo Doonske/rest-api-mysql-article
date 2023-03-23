@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HouseEntryList from './components/Haus';
 import CSEntryList from './components/Bauplatz';
 import ApartmentEntryList from './components/Wohnung';
+import Suche from './components/Suche';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/houses" element={<HouseEntryList/>} />
         <Route path="/construction-sides" element={<CSEntryList/>} />
         <Route path="/apartments" element={<ApartmentEntryList/>} />
+        <Route path="/search" element={<Suche/>} />
        
       </Routes>
     </Router>

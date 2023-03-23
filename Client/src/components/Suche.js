@@ -3,7 +3,7 @@ import axios from 'axios';
 import './components.css';
 import { useNavigate } from 'react-router-dom';
 
-function EntryList() {
+function Suche() {
 
 const [entries, setEntries] = useState([]);
 const navigate = useNavigate();
@@ -24,6 +24,17 @@ const handleDelete = (id) => {
   });
 }
 
+//Suche
+const [searchTerm, setSearchTerm] = useState('');
+const [filteredEntries, setFilteredEntries] = useState([]);
+
+const handleSearch = () => {
+    const filtered = entries.filter(entry => entry.entry_address.toLowerCase().includes(searchTerm.toLowerCase()));
+    setFilteredEntries(filtered);
+  }
+
+//Suche Ende
+
 return (
   
     <header className='App-header'>
@@ -40,10 +51,15 @@ return (
       <button onClick={() => navigate('/new-entry')}>Neues Objekt anlegen</button> {/* Button um alle Einträge anzuzeigen */}
       </div>
 
-      {entries.length > 0 ?
+      <div>
+      <input type='text' placeholder='Search...' value={searchTerm} onChange={event => setSearchTerm(event.target.value)} />
+      <button onClick={handleSearch}>Search</button>
+      </div>
+
+      {filteredEntries.length > 0 ?
         <ul >
          
-          {entries.map(entry => (
+          {filteredEntries.map(entry => (
             <li key={entry.id} className='entry-item'>
               <div className='entry-box'>
               <img src={`http://localhost:3001/entries/image/${entry.id}`} alt={`Entry ${entry.id}`} />
@@ -64,7 +80,7 @@ return (
             </li>
           ))}
         </ul> :
-        <p>Loading...</p>
+        <p>Keine Einträge gefunden!</p>
       }
     </header>
   
@@ -72,8 +88,4 @@ return (
 
 }
 
-export default EntryList;
-
-
-
-
+export default Suche;
