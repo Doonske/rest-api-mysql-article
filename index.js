@@ -6,6 +6,7 @@ const interestRouter = require("./routes/interest");
 const imageRouter = require("./routes/image");
 const searchRouter = require("./routes/search");
 const filterRouter = require("./routes/filter");
+const testdataRouter = require("./routes/testdata")
 var cors = require('cors');
 
 app.use(cors());
@@ -24,8 +25,9 @@ app.get("/", (req, res) => {
 app.use("/entries", entriesRouter);
 app.use("/entries/interest", interestRouter);
 app.use("/entries/image", imageRouter);
-app.use("/search", searchRouter)
-app.use("/filter", filterRouter)
+app.use("/search", searchRouter);
+app.use("/filter", filterRouter);
+app.use("/testdata", testdataRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
