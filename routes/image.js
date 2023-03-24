@@ -8,7 +8,7 @@ const db = require("../services/db")
 
 const multer = require('multer');
 
-// Beispiel-Pfad zum öffentlichen Ordner, in dem das Bild gespeichert ist
+// Pfad zum Ordner, in dem die Bilder gespeichert ist
 const publicDir = path.join(__dirname, '..', '');
 
 const storage = multer.diskStorage({
