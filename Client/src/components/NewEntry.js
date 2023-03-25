@@ -39,7 +39,7 @@ function NewEntry() {
 
     
 
-  //Schema wie in Aufgabenstellung, falls Werte nicht ausgefülltwerden, dann werden Dummy Werte verwendet
+  //Schema wie in Aufgabenstellung, falls Werte nicht ausgefüllt werden, dann werden Dummy Werte verwendet
     const data = {
       createdOn: Date.now(),
       createdBy: "Benutzer",
@@ -71,7 +71,7 @@ function NewEntry() {
       apiCall();
     });
     
-    //Nach erstellen zurück zur Übersichtsseite
+    //Nach dem Erstellen zurück zur Übersichtsseite 
     navigate('/');
 
   };
