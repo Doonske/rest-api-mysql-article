@@ -12,7 +12,7 @@ async function getMultiple() {
   //const meta = { page };
 
   return {
-    rows
+    data
   };
 }
 
