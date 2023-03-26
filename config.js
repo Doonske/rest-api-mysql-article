@@ -5,8 +5,7 @@ const config = {
     user: "root",
     password: "",
     database: "testdaten",
-  },
-  listPerPage: 10,
+  }
 };
 
 module.exports = config;

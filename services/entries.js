@@ -2,18 +2,17 @@ const db = require("./db");
 const helper = require("../helper");
 const config = require("../config");
 
-async function getMultiple(page = 1) {
-  const offset = helper.getOffset(page, config.listPerPage);
+async function getMultiple() {
+  //const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
     `SELECT id, createdOn, createdBy, softwareVersion, customer, entry_type, entry_address, entry_postal, entry_city, entry_size, entry_comment, entry_shortHand, interest_count
-    FROM entries LIMIT ${offset},${config.listPerPage}`
+    FROM entries`
   );
   const data = helper.emptyOrRows(rows);
-  const meta = { page };
+  //const meta = { page };
 
   return {
-    data,
-    meta,
+    rows
   };
 }
 
