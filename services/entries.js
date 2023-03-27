@@ -9,7 +9,7 @@ async function getMultiple() {
     FROM entries`
   );
   const data = helper.emptyOrRows(rows);
-  //const meta = { page };
+  
 
   return {
     data
@@ -73,57 +73,77 @@ async function create(entries) {
 }
 
 async function update(id, entries) {
-// Check if entry exists
-const entryExists = await getOne(id);
-// Check if required fields are present
-const requiredFields = ['createdOn', 'createdBy', 'softwareVersion', 'customer', 'entry'];
-for (const field of requiredFields) {
-if (!entries[field]) {
-const error = new Error('Missing required field: ${field}');
-error.code = 'ER_BAD_FIELD_ERROR';
-throw error;
-}
-}
-// Check if required entry fields are present
-const { entry } = entries;
-const requiredEntryFields = ['type', 'address', 'postal', 'city', 'size', 'comment', 'shortHand'];
-for (const field of requiredEntryFields) {
-if (!entry[field]) {
-const error = new Error('Missing required field: ${field}');
-error.code = 'ER_BAD_FIELD_ERROR';
-throw error;
-}
-}
-    message = 'Entry updated successfully';
-    const query = 'UPDATE entries SET createdOn=?, createdBy=?, softwareVersion=?, customer=?, entry_type=?, entry_address=?, entry_postal=?, entry_city=?, entry_size=?, entry_comment=?, entry_shortHand=? WHERE id=?';
-    db.query(query, [
-      entries.createdOn,
-      entries.createdBy,
-      entries.softwareVersion,
-      entries.customer,
-      entries.entry.type,
-      entries.entry.address,
-      entries.entry.postal,
-      entries.entry.city,
-      entries.entry.size,
-      entries.entry.comment,
-      entries.entry.shortHand,
-      id
-    ], (err, result) => {
-    if (err) {
-    console.log("Err: ".err);
-    message = 'Error updating entry';
+  // Check if entry exists
+  const entryExists = await getOne(id);
+  
+  // Check if required fields are present
+  const requiredFields = ['createdOn', 'createdBy', 'softwareVersion', 'customer', 'entry'];
+  for (const field of requiredFields) {
+    if (!entries[field]) {
+      const error = new Error(`Missing required field: ${field}`);
+      error.code = 'ER_BAD_FIELD_ERROR';
+      throw error;
     }
-    });
-    return { message };
+  }
+  
+  // Check if required entry fields are present
+  const { entry } = entries;
+  const requiredEntryFields = ['type', 'address', 'postal', 'city', 'size', 'comment', 'shortHand'];
+  for (const field of requiredEntryFields) {
+    if (!entry[field]) {
+      const error = new Error(`Missing required field: ${field}`);
+      error.code = 'ER_BAD_FIELD_ERROR';
+      throw error;
+    }
+  }
+
+  // Aufgabe3
+  const row = await db.query('SELECT * FROM entries WHERE id = ?', [id]);
+  
+  if (row[0].interest_count >= 3) {
+    const error = new Error('Cannot delete entry with interest count of 3 or more');
+    error.code = 'ER_FORBIDDEN'
+    throw error;    
+  }
+
+  let message = 'Entry updated successfully';
+  const query = 'UPDATE entries SET createdOn=?, createdBy=?, softwareVersion=?, customer=?, entry_type=?, entry_address=?, entry_postal=?, entry_city=?, entry_size=?, entry_comment=?, entry_shortHand=? WHERE id=?';
+  db.query(query, [
+    entries.createdOn,
+    entries.createdBy,
+    entries.softwareVersion,
+    entries.customer,
+    entries.entry.type,
+    entries.entry.address,
+    entries.entry.postal,
+    entries.entry.city,
+    entries.entry.size,
+    entries.entry.comment,
+    entries.entry.shortHand,
+    id
+  ], (err, result) => {
+    if (err) {
+      console.log("Err: ".err);
+      message = 'Error updating entry';
+    }
+  });
+  return { message };
 }
 
+
 async function remove(id) {
-  const row = await db.query(
-    `DELETE FROM entries WHERE id = ?`, [id]
-  );
-  return row.affectedRows ? id : null;
-}
+  // Aufgabe3
+  const row = await db.query('SELECT * FROM entries WHERE id = ?', [id]);
+  
+  if (row[0].interest_count >= 3) {
+    const error = new Error('Cannot delete entry with interest count of 3 or more');
+    error.code = 'ER_FORBIDDEN'
+    throw error;    
+  }
+  
+  const result = await db.query('DELETE FROM entries WHERE id = ?', [id]);
+  return result.affectedRows ? id : null;
+  }
 
 module.exports = {
   getMultiple,

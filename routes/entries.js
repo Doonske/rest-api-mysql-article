@@ -48,9 +48,6 @@ router.post("/", async function (req, res, next) {
   } catch (err) {
     if (err.code === 'ER_BAD_FIELD_ERROR') {
       resolveErrors(res, 'Missing property in request', 400)
-    } else if (err.code === 'ER_DUP_ENTRY') {
-      //res.status(409).json({ error: 'Entry with this ID already exists' });
-      resolveErrors(res, 'Entry with this ID already exist', 409)
     } else {
       // Internal Server Error - Status Code 500
       resolveErrors(res, { error: err.message });
@@ -70,6 +67,8 @@ router.put("/:id", async function (req, res, next) {
   resolveErrors(res, "Entry with this ID already exists", 409);
   } else if (err.code === "Not Found") {
   resolveErrors(res, 'Entry with this id not found', 404);
+  } else if (err.code === "ER_FORBIDDEN") {
+  resolveErrors(res, "Cannot delete entry with interest count of 3 or more", 403);
   } else {
   resolveErrors(res, { error: err.message });
   }
@@ -88,9 +87,16 @@ router.delete("/:id", async function (req, res, next) {
     }
     res.json(deletedEntry);
   } catch (err) {
-    console.error(`Error while deleting entry`, err.message);
-    next(err);
-  }
+      if (err.code === "ER_BAD_FIELD_ERROR") {
+      resolveErrors(res, "Missing property in request", 400);
+      } else if (err.code === "ER_FORBIDDEN") {
+      resolveErrors(res, "Cannot delete entry with interest count of 3 or more", 403);
+      } else if (err.code === "Not Found") {
+      resolveErrors(res, 'Entry with this id not found', 404);
+      } else {
+      resolveErrors(res, { error: err.message });
+      }
+      }
 });
 
 
