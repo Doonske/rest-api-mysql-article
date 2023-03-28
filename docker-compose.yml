@@ -4,13 +4,14 @@ services:
         image: mysql:8.0.12
         container_name: wp-mysql
         environment:
-            MYSQL_ROOT_PASSWORD: ""
+            MYSQL_ROOT_PASSWORD: "password"
             MYSQL_DATABASE: testdaten
         networks:
             - web-prog
         ports:
             - target: 3306
               published: 3306
+        restart: always
     
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
@@ -21,9 +22,9 @@ services:
             PMA_HOST: wp-mysql
             MYSQL_ROOT_PASSWORD: root
         ports:
-            - target: 80
-              published: 8080
- networks:
-  web-prog:
+            - "8080:80"
+        restart: always
+networks:
+    web-prog:
 
 

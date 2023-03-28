@@ -15,7 +15,7 @@ function NewEntry() {
     entry_city: '',
     entry_size: '',
     entry_comment: '',
-    interest_count: 0,
+    
  });
 
   const apiCall = () => {
@@ -66,7 +66,7 @@ function NewEntry() {
         entry_city: '',
         entry_size: '',
         entry_comment: '',
-        interest_count: 0
+        
       });
       apiCall();
     });
