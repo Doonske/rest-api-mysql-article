@@ -4,7 +4,8 @@ services:
         image: mysql:8.0.12
         container_name: wp-mysql
         environment:
-            MYSQL_ROOT_PASSWORD: "password"
+            MYSQL_ALLOW_EMPTY_PASSWORD: true
+            MYSQL_ROOT_PASSWORD: ""
             MYSQL_DATABASE: testdaten
         networks:
             - web-prog
@@ -20,7 +21,8 @@ services:
             - web-prog
         environment:
             PMA_HOST: wp-mysql
-            MYSQL_ROOT_PASSWORD: root
+            MYSQL_ALLOW_EMPTY_PASSWORD: true
+            MYSQL_ROOT_PASSWORD: ""
         ports:
             - "8080:80"
         restart: always
