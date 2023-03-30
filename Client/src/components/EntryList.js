@@ -8,6 +8,8 @@ function EntryList() {
 const [entries, setEntries] = useState([]);
 const [selectedEntry, setSelectedEntry] = useState(null);
 const [isInterested, setIsInterested] = useState(false);
+const [searchQuery, setSearchQuery] = useState('');
+const [shouldPoll, setShouldPoll] = useState(true);
 const navigate = useNavigate();
 
 const apiCall = () => {
@@ -19,10 +21,12 @@ axios.get('http://localhost:3001/entries').then((data) => {
 useEffect(() => {
 apiCall();
   const intervalId = setInterval(() => {
-    apiCall();
+    if (shouldPoll) {
+      apiCall();
+    }
     }, 10000); // Ruft die Funktion alle 10 Sekunden auf
 return () => clearInterval(intervalId); // Stoppt das Polling, wenn die Komponente unmountet wird
-}, []);
+}, [shouldPoll]);
 
 
 const handleDelete = (id) => {
@@ -47,6 +51,19 @@ const handleInterestClick = () => {
   });
 }
 
+
+const handleSearch = (event) => {
+  event.preventDefault();
+  axios.get(`http://localhost:3001/search/${searchQuery}`)
+    .then((data) => {
+      setEntries(data.data);
+      setShouldPoll(false);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
+
 return (
   
     <header className='App-header'>
@@ -62,6 +79,13 @@ return (
       <div class='new-entry-button'>
       <button onClick={() => navigate('/new-entry')}>Neues Objekt anlegen</button> {/* Button um alle Einträge anzuzeigen */}
       </div>
+
+      <div class="search-form">
+    <form onSubmit={handleSearch}>
+      <input type="text" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
+      <button type="submit">Suchen</button>
+    </form>
+  </div>
 
       {entries.length > 0 ?
         <ul >
@@ -87,7 +111,7 @@ return (
             </li>
           ))}
         </ul> :
-        <p>Loading...</p>
+        <p>Keine Einträge gefunden!</p>
       }
 
   {selectedEntry && (

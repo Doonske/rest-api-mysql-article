@@ -111,7 +111,7 @@ function NewEntry() {
           </label>
           <label>
             Postleitzahl*:
-            <input type="text" name="entry_postal" value={newEntry.entry_postal} onChange={handleInputChange} required/>
+            <input type="number" name="entry_postal" value={newEntry.entry_postal} onChange={handleInputChange} required/>
           </label>
           <label>
             Ort*:
@@ -119,7 +119,7 @@ function NewEntry() {
           </label>
           <label>
             Größe in m²*:
-            <input type="text" name="entry_size" value={newEntry.entry_size} onChange={handleInputChange} required/>
+            <input type="number" name="entry_size" value={newEntry.entry_size} onChange={handleInputChange} required/>
           </label>
           <label>
             Beschreibung*:

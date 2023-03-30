@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
             comment: 'Schöne Wohnung in guter Lage',
             shortHand: 'Musterstraße 1, 45qm'
             },
-        image_path: 'public/images/wall-gb7deaed0d_640.jpg'
+        image_path: 'public/images/wohnung.jpg'
       },
       {
         createdOn: Date.now(),
@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
             comment: 'Großes Haus mit Garten',
             shortHand: 'Hauptstraße 2, 120qm'
             },
-        image_path: 'public/images/wall-gb7deaed0d_640.jpg'
+        image_path: 'public/images/haus.jpg'
       },
       {
         createdOn: Date.now(),
@@ -59,7 +59,7 @@ router.post('/', async (req, res) => {
             comment: 'Großes Bauprojekt',
             shortHand: 'Baustelle 3'
             },
-        image_path: 'public/images/wall-gb7deaed0d_640.jpg'
+        image_path: 'public/images/bauplatz.jpg'
     }
     ];
   
