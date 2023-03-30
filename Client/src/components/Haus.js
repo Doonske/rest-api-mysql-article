@@ -3,6 +3,7 @@ import axios from 'axios';
 import './components.css';
 import { useNavigate } from 'react-router-dom';
 
+//Einträge die Häuser sind
 function HouseEntryList() {
     const [entries, setEntries] = useState([]);
     const [selectedEntry, setSelectedEntry] = useState(null);
@@ -20,7 +21,7 @@ useEffect(() => {
     apiCall();
       const intervalId = setInterval(() => {
         apiCall();
-        }, 5000); // Ruft die Funktion alle 5 Sekunden auf
+        }, 10000); // Ruft die Funktion alle 10 Sekunden auf
     return () => clearInterval(intervalId); // Stoppt das Polling, wenn die Komponente unmountet wird
     }, []);
 

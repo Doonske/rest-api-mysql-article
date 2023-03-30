@@ -3,6 +3,7 @@ import axios from 'axios';
 import './components.css';
 import { useNavigate } from 'react-router-dom';
 
+//Zeigt alle Einträge an
 function EntryList() {
 
 const [entries, setEntries] = useState([]);
@@ -28,7 +29,7 @@ apiCall();
 return () => clearInterval(intervalId); // Stoppt das Polling, wenn die Komponente unmountet wird
 }, [shouldPoll]);
 
-
+//Funktion zum Löschen von Objekten
 const handleDelete = (id) => {
   axios.delete(`http://localhost:3001/entries/${id}`).then(() => {
     setSelectedEntry(null);
@@ -36,14 +37,16 @@ const handleDelete = (id) => {
   });
 }
 
+//Detail Funktion
 const handleDetailsClick = (entry) => {
   setSelectedEntry(entry);
 }
-
+//Detailfenster schließen
 const handleCloseDetails = () => {
   setSelectedEntry(null);
 }
 
+//Interessiert Funktion
 const handleInterestClick = () => {
   axios.post(`http://localhost:3001/entries/interest/${selectedEntry.id}`)
   .then(() => {
@@ -51,13 +54,13 @@ const handleInterestClick = () => {
   });
 }
 
-
+// Such Funktion
 const handleSearch = (event) => {
   event.preventDefault();
   axios.get(`http://localhost:3001/search/${searchQuery}`)
     .then((data) => {
       setEntries(data.data);
-      setShouldPoll(false);
+      setShouldPoll(false); //Polling wird nach Suche ausgesetzt, da sonst alle Einträge angezeigt werden
     })
     .catch((err) => {
       console.error(err);
@@ -126,11 +129,11 @@ return (
             <p>Beschreibung: {selectedEntry.entry_comment}</p>
             <p>Erstellt von: {selectedEntry.createdBy}</p>
             <p>Interesenten: {selectedEntry.interest_count}</p>
-            <button onClick={handleCloseDetails}>Schließen</button>
-            <button onClick={() => handleDelete(selectedEntry.id)}>Löschen</button>
+            <button onClick={handleCloseDetails}>Schließen</button> {/* Button um Detailseite zu schließen */}
+            <button onClick={() => handleDelete(selectedEntry.id)}>Löschen</button> {/* Button um Eintrag zu löschen */}
             {isInterested ? 
             <button disabled>Interessiert</button> : 
-            <button onClick={handleInterestClick}>Interessiert</button>}
+            <button onClick={handleInterestClick}>Interessiert</button>} {/* Button um interest_count um 1 zu erhöhen */}
           </div>
         </div>
 )}
