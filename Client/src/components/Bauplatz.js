@@ -13,10 +13,14 @@ const filteredEntries = data.data.data.filter(entry => entry.entry_type === 'con
 setEntries(filteredEntries);
 })
 }
-
+// Aufgabe 3
 useEffect(() => {
-apiCall();
-}, []);
+    apiCall();
+      const intervalId = setInterval(() => {
+        apiCall();
+        }, 5000); // Ruft die Funktion alle 5 Sekunden auf
+    return () => clearInterval(intervalId); // Stoppt das Polling, wenn die Komponente unmountet wird
+    }, []);
 
 const handleDelete = (id) => {
 axios.delete(`http://localhost:3001/entries/${id}`).then(() => {

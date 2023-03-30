@@ -7,6 +7,7 @@ function EntryList() {
 
 const [entries, setEntries] = useState([]);
 const [selectedEntry, setSelectedEntry] = useState(null);
+const [isInterested, setIsInterested] = useState(false);
 const navigate = useNavigate();
 
 const apiCall = () => {
@@ -14,8 +15,13 @@ axios.get('http://localhost:3001/entries').then((data) => {
   setEntries(data.data.data);
 })
 }
+//Aufgabe 3
 useEffect(() => {
 apiCall();
+  const intervalId = setInterval(() => {
+    apiCall();
+    }, 5000); // Ruft die Funktion alle 5 Sekunden auf
+return () => clearInterval(intervalId); // Stoppt das Polling, wenn die Komponente unmountet wird
 }, []);
 
 
@@ -32,6 +38,13 @@ const handleDetailsClick = (entry) => {
 
 const handleCloseDetails = () => {
   setSelectedEntry(null);
+}
+
+const handleInterestClick = () => {
+  axios.post(`http://localhost:3001/entries/interest/${selectedEntry.id}`)
+  .then(() => {
+    setIsInterested(true);
+  });
 }
 
 return (
@@ -91,6 +104,9 @@ return (
             <p>Interesenten: {selectedEntry.interest_count}</p>
             <button onClick={handleCloseDetails}>Close</button>
             <button onClick={() => handleDelete(selectedEntry.id)}>Delete</button>
+            {isInterested ? 
+            <button disabled>Interessiert</button> : 
+            <button onClick={handleInterestClick}>Interessiert</button>}
           </div>
         </div>
 )}
