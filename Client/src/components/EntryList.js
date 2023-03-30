@@ -17,7 +17,7 @@ axios.get('http://localhost:3001/entries').then((data) => {
   setEntries(data.data.data);
 })
 }
-//Aufgabe 3
+//Aufgabe 3 "Polling"
 useEffect(() => {
 apiCall();
   const intervalId = setInterval(() => {

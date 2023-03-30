@@ -68,7 +68,7 @@ router.put("/:id", async function (req, res, next) {
   } else if (err.code === "Not Found") {
   resolveErrors(res, 'Entry with this id not found', 404);
   } else if (err.code === "ER_FORBIDDEN") {
-  resolveErrors(res, "Cannot delete entry with interest count of 3 or more", 403);
+  resolveErrors(res, "Cannot delete entry with interest count of 3 or more", 403); //Aufgabe 3
   } else {
   resolveErrors(res, { error: err.message });
   }
@@ -90,7 +90,7 @@ router.delete("/:id", async function (req, res, next) {
       if (err.code === "ER_BAD_FIELD_ERROR") {
       resolveErrors(res, "Missing property in request", 400);
       } else if (err.code === "ER_FORBIDDEN") {
-      resolveErrors(res, "Cannot delete entry with interest count of 3 or more", 403);
+      resolveErrors(res, "Cannot delete entry with interest count of 3 or more", 403);  //Aufgabe 3
       } else if (err.code === "Not Found") {
       resolveErrors(res, 'Entry with this id not found', 404);
       } else {

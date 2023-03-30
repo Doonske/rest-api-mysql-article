@@ -1,0 +1,1653 @@
+{
+	"info": {
+		"_postman_id": "c197e3a0-d953-40fb-b5f3-c57a08e8f30f",
+		"name": "WEB_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3001/entries",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/entries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"entries"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3001/entries",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/entries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3730"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e92-WXxbXKqCj4NT2XjbpaQHpwyVVKs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:19:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"createdOn\": 1667400075,\n            \"createdBy\": \"Frieda Fröhlich\",\n            \"softwareVersion\": \"3\",\n            \"customer\": \"Studentenbuden AG\",\n            \"entry_type\": \"apartment\",\n            \"entry_address\": \"Am bekannten Platz 28\",\n            \"entry_postal\": \"89522 \",\n            \"entry_city\": \"Heidenheim an der Brenz\",\n            \"entry_size\": 34,\n            \"entry_comment\": \"Kleine Wohnung für Studenten, Möbiliert, Gute lage, Preiswert\",\n            \"entry_shortHand\": \"Studenten Wohnung am\",\n            \"interest_count\": 2\n        },\n        {\n            \"id\": 4,\n            \"createdOn\": 1667400075,\n            \"createdBy\": \"Max Musterman\",\n            \"softwareVersion\": \"2022\",\n            \"customer\": \"Gut & Unbezahlbar GmbH\",\n            \"entry_type\": \"house\",\n            \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n            \"entry_postal\": \"\",\n            \"entry_city\": \"\",\n            \"entry_size\": 246,\n            \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n            \"entry_shortHand\": \"Objekt AB-246\",\n            \"interest_count\": 4\n        },\n        {\n            \"id\": 5,\n            \"createdOn\": 1667400075,\n            \"createdBy\": \"Max Musterman\",\n            \"softwareVersion\": \"2022-1.3.2\",\n            \"customer\": \"Gut & Unbezahlbar GmbH\",\n            \"entry_type\": \"construction-site\",\n            \"entry_address\": \"Beispielstraße 56\",\n            \"entry_postal\": \"89522\",\n            \"entry_city\": \"Heidenheim an der Brenz\",\n            \"entry_size\": 246,\n            \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n            \"entry_shortHand\": \"Objekt AB-246\",\n            \"interest_count\": 0\n        },\n        {\n            \"id\": 6,\n            \"createdOn\": 1667400075,\n            \"createdBy\": \"Max Musterman\",\n            \"softwareVersion\": \"2022\",\n            \"customer\": \"Gut & Unbezahlbar GmbH\",\n            \"entry_type\": \"house\",\n            \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n            \"entry_postal\": \"\",\n            \"entry_city\": \"\",\n            \"entry_size\": 246,\n            \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n            \"entry_shortHand\": \"Objekt AB-246\",\n            \"interest_count\": 0\n        },\n        {\n            \"id\": 7,\n            \"createdOn\": 1667400075,\n            \"createdBy\": \"Max Musterman\",\n            \"softwareVersion\": \"2022\",\n            \"customer\": \"Gut & Unbezahlbar GmbH\",\n            \"entry_type\": \"house\",\n            \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n            \"entry_postal\": \"\",\n            \"entry_city\": \"\",\n            \"entry_size\": 246,\n            \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n            \"entry_shortHand\": \"Objekt AB-246\",\n            \"interest_count\": 0\n        },\n        {\n            \"id\": 8,\n            \"createdOn\": 1667400075,\n            \"createdBy\": \"Max Musterman\",\n            \"softwareVersion\": \"2022\",\n            \"customer\": \"Gut & Unbezahlbar GmbH\",\n            \"entry_type\": \"house\",\n            \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n            \"entry_postal\": \"\",\n            \"entry_city\": \"\",\n            \"entry_size\": 246,\n            \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n            \"entry_shortHand\": \"Objekt AB-246\",\n            \"interest_count\": 0\n        },\n        {\n            \"id\": 9,\n            \"createdOn\": 1667400075,\n            \"createdBy\": \"Max Musterman\",\n            \"softwareVersion\": \"2022\",\n            \"customer\": \"Gut & Unbezahlbar GmbH\",\n            \"entry_type\": \"house\",\n            \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n            \"entry_postal\": \"\",\n            \"entry_city\": \"\",\n            \"entry_size\": 246,\n            \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n            \"entry_shortHand\": \"Objekt AB-246\",\n            \"interest_count\": 0\n        },\n        {\n            \"id\": 13,\n            \"createdOn\": 1667400075,\n            \"createdBy\": \"Max Mustermannnnnnnnnn\",\n            \"softwareVersion\": \"2022\",\n            \"customer\": \"Gut & Unbezahlbar GmbH\",\n            \"entry_type\": \"house\",\n            \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n            \"entry_postal\": \"\",\n            \"entry_city\": \"\",\n            \"entry_size\": 246,\n            \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n            \"entry_shortHand\": \"Objekt AB-246\",\n            \"interest_count\": 0\n        },\n        {\n            \"id\": 20,\n            \"createdOn\": 1667400075,\n            \"createdBy\": \"Michi Mustermann\",\n            \"softwareVersion\": \"2022\",\n            \"customer\": \"Gut & Unbezahlbar GmbH\",\n            \"entry_type\": \"house\",\n            \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n            \"entry_postal\": \"\",\n            \"entry_city\": \"\",\n            \"entry_size\": 246,\n            \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n            \"entry_shortHand\": \"Objekt AB-246\",\n            \"interest_count\": 0\n        },\n        {\n            \"id\": 21,\n            \"createdOn\": 1667400075,\n            \"createdBy\": \"Michi Mustermann\",\n            \"softwareVersion\": \"2022\",\n            \"customer\": \"Gut & Unbezahlbar GmbH\",\n            \"entry_type\": \"house\",\n            \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n            \"entry_postal\": \"\",\n            \"entry_city\": \"\",\n            \"entry_size\": 246,\n            \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n            \"entry_shortHand\": \"Objekt AB-246\",\n            \"interest_count\": 0\n        }\n    ],\n    \"meta\": {\n        \"page\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3001/search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/search/Beispielstraße 56",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"search",
+						"Beispielstraße 56"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3001/search",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/search/Beispielstraße 56",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"search",
+								"Beispielstraße 56"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4671"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"123f-475/MoCZ3QgukKeerX6eZmVrZyg\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:19:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 4,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 4,\n        \"image_path\": \"public\\\\images\\\\living-room-g68b2e4d4b_640.jpg\"\n    },\n    {\n        \"id\": 5,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022-1.3.2\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"construction-site\",\n        \"entry_address\": \"Beispielstraße 56\",\n        \"entry_postal\": \"89522\",\n        \"entry_city\": \"Heidenheim an der Brenz\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"public\\\\images\\\\wall-gb7deaed0d_640.jpg\"\n    },\n    {\n        \"id\": 6,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 7,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 8,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 9,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 13,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Mustermannnnnnnnnn\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 20,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Michi Mustermann\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 21,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Michi Mustermann\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 22,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Michi Mustermann\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 23,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Uwe Mustermann\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 26,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56\",\n        \"entry_postal\": \"89522\",\n        \"entry_city\": \"Heidenheim an der Brenz\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    }\n]"
+				},
+				{
+					"name": "http://localhost:3001/search",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/search/Beispielstraße 57",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"search",
+								"Beispielstraße 57"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19-5xlCxicePskL//6L4qMA9oQ7Vjo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:20:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "No matching results found"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3001/filter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/filter/filter?filter=house",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"filter",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "house"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3001/filter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/filter/filter?filter=house",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"filter",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "house"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5357"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14ed-tv7IciQrhOmGz5G/MhKaEzc3pMs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:20:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 4,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 4,\n        \"image_path\": \"public\\\\images\\\\living-room-g68b2e4d4b_640.jpg\"\n    },\n    {\n        \"id\": 6,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 7,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 8,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 9,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 13,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Mustermannnnnnnnnn\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 20,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Michi Mustermann\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 21,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Michi Mustermann\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 22,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Michi Mustermann\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 23,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Uwe Mustermann\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\n        \"entry_postal\": \"\",\n        \"entry_city\": \"\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 24,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Uwe Mustermann\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 34343\",\n        \"entry_postal\": \"89522 \",\n        \"entry_city\": \"Heidenheim an der Brenz\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 26,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Beispielstraße 56\",\n        \"entry_postal\": \"89522\",\n        \"entry_city\": \"Heidenheim an der Brenz\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 36,\n        \"createdOn\": 2147483647,\n        \"createdBy\": \"Benutzer\",\n        \"softwareVersion\": \"2022-1.3.2\",\n        \"customer\": \"Customer 1\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Hauptstraße 2\",\n        \"entry_postal\": \"67890\",\n        \"entry_city\": \"Musterdorf\",\n        \"entry_size\": 120,\n        \"entry_comment\": \"Großes Haus mit Garten\",\n        \"entry_shorthand\": \"Hauptstraße 2, 120qm\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 40,\n        \"createdOn\": 2147483647,\n        \"createdBy\": \"Benutzer\",\n        \"softwareVersion\": \"2022-1.3.2\",\n        \"customer\": \"Customer 1\",\n        \"entry_type\": \"house\",\n        \"entry_address\": \"Hauptstraße 2\",\n        \"entry_postal\": \"67890\",\n        \"entry_city\": \"Musterdorf\",\n        \"entry_size\": 120,\n        \"entry_comment\": \"Großes Haus mit Garten\",\n        \"entry_shorthand\": \"Hauptstraße 2, 120qm\",\n        \"interest_count\": 0,\n        \"image_path\": \"public/images/wall-gb7deaed0d_640.jpg\"\n    }\n]"
+				},
+				{
+					"name": "http://localhost:3001/filter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/filter/filter?filter=apartment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"filter",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "apartment"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1654"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"676-33gT3hghep8tivHxjU5vaiZPyww\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:20:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Frieda Fröhlich\",\n        \"softwareVersion\": \"3\",\n        \"customer\": \"Studentenbuden AG\",\n        \"entry_type\": \"apartment\",\n        \"entry_address\": \"Am bekannten Platz 28\",\n        \"entry_postal\": \"89522 \",\n        \"entry_city\": \"Heidenheim an der Brenz\",\n        \"entry_size\": 34,\n        \"entry_comment\": \"Kleine Wohnung für Studenten, Möbiliert, Gute lage, Preiswert\",\n        \"entry_shorthand\": \"Studenten Wohnung am\",\n        \"interest_count\": 2,\n        \"image_path\": \"public\\\\images\\\\wall-gb7deaed0d_640.jpg\"\n    },\n    {\n        \"id\": 27,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Frieda Fröhlich\",\n        \"softwareVersion\": \"3\",\n        \"customer\": \"Studentenbuden AG\",\n        \"entry_type\": \"apartment\",\n        \"entry_address\": \"Am bekannten Platz 28\",\n        \"entry_postal\": \"89522\",\n        \"entry_city\": \"Heidenheim an der Brenz\",\n        \"entry_size\": 34,\n        \"entry_comment\": \"Kleine Wohnung für Studenten, Möbiliert, Gute lage, Preiswert\",\n        \"entry_shorthand\": \"Studenten Wohnung am bekannten Platz 28\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 37,\n        \"createdOn\": 2147483647,\n        \"createdBy\": \"Benutzer\",\n        \"softwareVersion\": \"2022-1.3.2\",\n        \"customer\": \"Customer 1\",\n        \"entry_type\": \"apartment\",\n        \"entry_address\": \"Musterstraße 1\",\n        \"entry_postal\": \"12345\",\n        \"entry_city\": \"Musterstadt\",\n        \"entry_size\": 45,\n        \"entry_comment\": \"Schöne Wohnung in guter Lage\",\n        \"entry_shorthand\": \"Musterstraße 1, 45qm\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 38,\n        \"createdOn\": 2147483647,\n        \"createdBy\": \"Benutzer\",\n        \"softwareVersion\": \"2022-1.3.2\",\n        \"customer\": \"Customer 1\",\n        \"entry_type\": \"apartment\",\n        \"entry_address\": \"Musterstraße 1\",\n        \"entry_postal\": \"12345\",\n        \"entry_city\": \"Musterstadt\",\n        \"entry_size\": 45,\n        \"entry_comment\": \"Schöne Wohnung in guter Lage\",\n        \"entry_shorthand\": \"Musterstraße 1, 45qm\",\n        \"interest_count\": 0,\n        \"image_path\": \"public/images/wall-gb7deaed0d_640.jpg\"\n    }\n]"
+				},
+				{
+					"name": "http://localhost:3001/filter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/filter/filter?filter=construction-site",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"filter",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "construction-site"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1161"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"489-c/ehdIVUXM+UOBI0vtldpB0hVpA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:21:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 5,\n        \"createdOn\": 1667400075,\n        \"createdBy\": \"Max Musterman\",\n        \"softwareVersion\": \"2022-1.3.2\",\n        \"customer\": \"Gut & Unbezahlbar GmbH\",\n        \"entry_type\": \"construction-site\",\n        \"entry_address\": \"Beispielstraße 56\",\n        \"entry_postal\": \"89522\",\n        \"entry_city\": \"Heidenheim an der Brenz\",\n        \"entry_size\": 246,\n        \"entry_comment\": \"Ruhige Lage, mitten im Zentrum\",\n        \"entry_shorthand\": \"Objekt AB-246\",\n        \"interest_count\": 0,\n        \"image_path\": \"public\\\\images\\\\wall-gb7deaed0d_640.jpg\"\n    },\n    {\n        \"id\": 35,\n        \"createdOn\": 2147483647,\n        \"createdBy\": \"Benutzer\",\n        \"softwareVersion\": \"2022-1.3.2\",\n        \"customer\": \"Customer 1\",\n        \"entry_type\": \"construction-site\",\n        \"entry_address\": \"Baustelle 3\",\n        \"entry_postal\": \"99999\",\n        \"entry_city\": \"Musterstadt\",\n        \"entry_size\": 250,\n        \"entry_comment\": \"Großes Bauprojekt\",\n        \"entry_shorthand\": \"Baustelle 3\",\n        \"interest_count\": 0,\n        \"image_path\": \"\"\n    },\n    {\n        \"id\": 39,\n        \"createdOn\": 2147483647,\n        \"createdBy\": \"Benutzer\",\n        \"softwareVersion\": \"2022-1.3.2\",\n        \"customer\": \"Customer 1\",\n        \"entry_type\": \"construction-site\",\n        \"entry_address\": \"Baustelle 3\",\n        \"entry_postal\": \"99999\",\n        \"entry_city\": \"Musterstadt\",\n        \"entry_size\": 250,\n        \"entry_comment\": \"Großes Bauprojekt\",\n        \"entry_shorthand\": \"Baustelle 3\",\n        \"interest_count\": 0,\n        \"image_path\": \"public/images/wall-gb7deaed0d_640.jpg\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3001/entries/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/entries/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"entries",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3001/entries/:id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/entries/49",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries",
+								"49"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "347"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15b-C6teHgbwAsh/CPRbEbOCJUBIRaE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Mar 2023 09:33:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 49,\n    \"createdOn\": \"1680165066455\",\n    \"createdBy\": \"Benutzer\",\n    \"softwareVersion\": \"2022-1.3.2\",\n    \"customer\": \"Customer 1\",\n    \"entry_type\": \"apartment\",\n    \"entry_address\": \"Musterstraße 1\",\n    \"entry_postal\": 12345,\n    \"entry_city\": \"Musterstadt\",\n    \"entry_size\": 45,\n    \"entry_comment\": \"Schöne Wohnung in guter Lage\",\n    \"entry_shortHand\": \"Musterstraße 1, 45qm\",\n    \"interest_count\": 5\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3001/entries/interest/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/entries/interest/49",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"entries",
+						"interest",
+						"49"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3001/entries/interest/:id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/entries/interest/49",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries",
+								"interest",
+								"49"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1-2kuSN7rMzfGcB2DKt67EqDWQELA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:21:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "2"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3001/entries/image/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/entries/image/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"entries",
+						"image",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/testdata",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/testdata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"testdata"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3001/testdata",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/testdata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"testdata"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e-fNKb8KS7wm++68YsK0Cm9gMEAtE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:28:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Test data created successfully"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3001/entries",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"createdOn\": 1667400075,\r\n\"createdBy\": \"Max Musterman\",\r\n\"softwareVersion\": \"2022-1.3.2\",\r\n\"customer\": \"Gut & Unbezahlbar GmbH\",\r\n\"entry\": {\r\n\"type\": \"house\",\r\n\"address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\r\n\"size\": 246,\r\n\"comment\": \"Ruhige Lage, mitten im Zentrum\",\r\n\"shortHand\": \"Objekt AB-246\"\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/entries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"entries"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3001/entries",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"createdOn\": 1667400075,\r\n\"createdBy\": \"Frieda Fröhlich\",\r\n\"softwareVersion\": \"3.4.2.6\",\r\n\"customer\": \"Studentenbuden AG\",\r\n\"entry\": {\r\n\"type\": \"apartment\",\r\n\"address\": \"Am bekannten Platz 28\",\r\n\"postal\": 89522,\r\n\"city\": \"Heidenheim an der Brenz\",\r\n\"size\": 34,\r\n\"comment\": \"Kleine Wohnung für Studenten, Möbiliert, Gute lage, Preiswert\",\r\n\"shortHand\": \"Studenten Wohnung am bekannten Platz 28\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/entries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-Qcw1q2q7yAvU9EpS7F9fXIh54e0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:29:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Entry created successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3001/entries/interest/:id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/interest/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"interest",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3001/entries/interest/:id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/entries/interest/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries",
+								"interest",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-VC+PEdA1wSk92kTxaGcEeOyOhRo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:30:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"interestCount\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3001/entries/image/:id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/C:/Users/daniel.kern/Downloads/wall-gb7deaed0d_640.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/entries/image/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"entries",
+						"image",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3001/entries/image/:id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/daniel.kern/Downloads/wall-gb7deaed0d_640.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/entries/image/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries",
+								"image",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10-oV4hJxRVSENxc/wX8+mA4/Pe4tA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:32:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3001/entries",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"createdOn\": 1667400075,\r\n\"createdBy\": \"Frieda Fröhlich\",\r\n\"softwareVersion\": \"3.4.2.6\",\r\n\"customer\": \"Studentenbuden AG\",\r\n\"entry\": {\r\n\"type\": \"apartment\",\r\n\"address\": \"Am bekannten Platz 28, 89522 Heidenheim an der Brenz\",\r\n\"size\": 34,\r\n\"comment\": \"Kleine Wohnung für Studenten, Möbiliert, Gute lage, Preiswert\",\r\n\"shortHand\": \"Studenten Wohnung am bekannten Platz 28\"\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/entries/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"entries",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3001/entries",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"createdOn\": 1667400075,\r\n\"createdBy\": \"Frieda Fröhlich\",\r\n\"softwareVersion\": \"3.4.2.6\",\r\n\"customer\": \"Studentenbuden AG\",\r\n\"entry\": {\r\n\"type\": \"apartment\",\r\n\"address\": \"Am bekannten Platz 28\",\r\n\"postal\": 89522,\r\n\"city\": \"Heidenheim an der Brenz\",\r\n\"size\": 34,\r\n\"comment\": \"Kleine Wohnung für Studenten, Möbiliert, Gute lage, Preiswert\",\r\n\"shortHand\": \"Studenten Wohnung am bekannten Platz 28\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/entries/49",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries",
+								"49"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-cfoTijRbISHFCoX/9Nta/HLdQqs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:33:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Entry updated successfully\"\n}"
+				},
+				{
+					"name": "http://localhost:3001/entries",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"createdOn\": 1667400075,\r\n\"createdBy\": \"Frieda Fröhlich\",\r\n\"softwareVersion\": \"3.4.2.6\",\r\n\"customer\": \"Studentenbuden AG\",\r\n\"entry\": {\r\n\"type\": \"apartment\",\r\n\"address\": \"Am bekannten Platz 28\",\r\n\"postal\": 89522,\r\n\"city\": \"Heidenheim an der Brenz\",\r\n\"size\": 34,\r\n\"comment\": \"Kleine Wohnung für Studenten, Möbiliert, Gute lage, Preiswert\",\r\n\"shortHand\": \"Studenten Wohnung am bekannten Platz 28\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/entries/300",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries",
+								"300"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-cw6jRp3XBHTLZ7gkSs+IjU9fLjM\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 27 Mar 2023 12:38:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Entry with this id not found"
+				},
+				{
+					"name": "http://localhost:3001/entries",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"createdOn\": 1667400075,\r\n\"createdBy\": \"Frieda Fröhlich\",\r\n\"softwareVersion\": \"3.4.2.6\",\r\n\"customer\": \"Studentenbuden AG\",\r\n\"entry\": {\r\n\"type\": \"apartment\",\r\n\"address\": \"Am bekannten Platz 28\",\r\n\"postal\": 89522,\r\n\"city\": \"Heidenheim an der Brenz\",\r\n\"size\": 34,\r\n\"comment\": \"Kleine Wohnung für Studenten, Möbiliert, Gute lage, Preiswert\",\r\n\"shortHand\": \"Studenten Wohnung am bekannten Platz 28\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/entries/30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries",
+								"30"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"34-BhdGI7n3Jn6RTnejJz549bY25Hk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 27 Mar 2023 12:40:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Cannot delete entry with interest count of 3 or more"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3001/entries",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"createdOn\": 1667400075,\r\n\"createdBy\": \"Max Musterman\",\r\n\"softwareVersion\": \"2022-1.3.2\",\r\n\"customer\": \"Gut & Unbezahlbar GmbH\",\r\n\"entry\": {\r\n\"type\": \"house\",\r\n\"address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\r\n\"size\": 246,\r\n\"comment\": \"Ruhige Lage, mitten im Zentrum\",\r\n\"shortHand\": \"Objekt AB-246\"\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/entries/49",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"entries",
+						"49"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3001/entries",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"createdOn\": 1667400075,\r\n\"createdBy\": \"Max Musterman\",\r\n\"softwareVersion\": \"2022-1.3.2\",\r\n\"customer\": \"Gut & Unbezahlbar GmbH\",\r\n\"entry\": {\r\n\"type\": \"house\",\r\n\"address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\r\n\"size\": 246,\r\n\"comment\": \"Ruhige Lage, mitten im Zentrum\",\r\n\"shortHand\": \"Objekt AB-246\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/entries/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-7sT1GL7HrXcvH4UeEEuaqNz2OOg\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:33:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Entry with id 1 not found\"\n}"
+				},
+				{
+					"name": "http://localhost:3001/entries",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"createdOn\": 1667400075,\r\n\"createdBy\": \"Max Musterman\",\r\n\"softwareVersion\": \"2022-1.3.2\",\r\n\"customer\": \"Gut & Unbezahlbar GmbH\",\r\n\"entry\": {\r\n\"type\": \"house\",\r\n\"address\": \"Beispielstraße 56, 89522 Heidenheim an der Brenz\",\r\n\"size\": 246,\r\n\"comment\": \"Ruhige Lage, mitten im Zentrum\",\r\n\"shortHand\": \"Objekt AB-246\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/entries/40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries",
+								"40"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4-pemiT4UAKqJqMBjqoEuy/AAnT9M\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:33:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "\"40\""
+				},
+				{
+					"name": "http://localhost:3001/entries",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/entries/30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries",
+								"30"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"34-BhdGI7n3Jn6RTnejJz549bY25Hk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 27 Mar 2023 12:40:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Cannot delete entry with interest count of 3 or more"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3001/entries/interest/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/interest/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"interest",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3001/entries/interest/:id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/entries/interest/49",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"entries",
+								"interest",
+								"49"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-1GpgTPz/s4Dmv/SKMHIksglDdn4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Mar 2023 21:34:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"interestCount\": 2\n}"
+				}
+			]
+		}
+	]
+}
