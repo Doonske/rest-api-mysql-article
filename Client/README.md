@@ -1,3 +1,23 @@
+# Frontend starten
+Navigieren Sie im Terminal in den "Client"-Ordner und führen Sie folgenden Befehl aus:
+
+### `npm start`
+
+Es sollte sich automatisch eine Seite im Browser öffnen.
+Falls nicht, öffnen Sie [http://localhost:3000] in Ihrem Browser.
+
+
+
+
+
+
+
+
+
+
+
+### Standard Text aus der Create React App ###
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

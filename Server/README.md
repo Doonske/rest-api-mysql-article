@@ -1,3 +1,5 @@
-# rest-api-mysql-article
+# Backend starten
 
-https://blog.logrocket.com/build-rest-api-node-express-mysql/
+Navigieren Sie im Terminal in den "Server"-Ordner und führen Sie folgenden Befehl aus:
+
+### `node index.js`

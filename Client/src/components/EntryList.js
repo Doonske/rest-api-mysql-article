@@ -126,8 +126,8 @@ return (
             <p>Beschreibung: {selectedEntry.entry_comment}</p>
             <p>Erstellt von: {selectedEntry.createdBy}</p>
             <p>Interesenten: {selectedEntry.interest_count}</p>
-            <button onClick={handleCloseDetails}>Close</button>
-            <button onClick={() => handleDelete(selectedEntry.id)}>Delete</button>
+            <button onClick={handleCloseDetails}>Schließen</button>
+            <button onClick={() => handleDelete(selectedEntry.id)}>Löschen</button>
             {isInterested ? 
             <button disabled>Interessiert</button> : 
             <button onClick={handleInterestClick}>Interessiert</button>}
