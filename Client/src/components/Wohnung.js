@@ -4,8 +4,10 @@ import './components.css';
 import { useNavigate } from 'react-router-dom';
 
 function ApartmentEntryList() {
-const [entries, setEntries] = useState([]);
-const navigate = useNavigate();
+    const [entries, setEntries] = useState([]);
+    const [selectedEntry, setSelectedEntry] = useState(null);
+    const [isInterested, setIsInterested] = useState(false);
+    const navigate = useNavigate();
 
 const apiCall = () => {
 axios.get('http://localhost:3001/entries').then((data) => {
@@ -23,10 +25,27 @@ useEffect(() => {
     }, []);
 
 const handleDelete = (id) => {
-axios.delete(`http://localhost:3001/entries/${id}`).then(() => {
-apiCall();
-});
-}
+    axios.delete(`http://localhost:3001/entries/${id}`).then(() => {
+    setSelectedEntry(null);
+    apiCall();
+    });
+    }
+          
+ const handleDetailsClick = (entry) => {
+    setSelectedEntry(entry);
+    }
+          
+const handleCloseDetails = () => {
+    setSelectedEntry(null);
+    }
+          
+const handleInterestClick = () => {
+    axios.post(`http://localhost:3001/entries/interest/${selectedEntry.id}`)
+    .then(() => {
+    setIsInterested(true);
+    });
+    }
+    
 
 return (
     <header className='App-header'>
@@ -43,25 +62,48 @@ return (
         <ul >
             {entries.map(entry => (
             <li key={entry.id} className='entry-item'>
-               <div className='entry-box'>
-                <img src={`http://localhost:3001/entries/image/${entry.id}`} alt={`Entry ${entry.id}`} />
-                <div className='entry-title'><h4>{entry.entry_shortHand}</h4></div>
+              <div className='entry-box'>
+              <img src={`http://localhost:3001/entries/image/${entry.id}`} alt={`Entry ${entry.id}`} />
+              <div className='entry-title'><h4>{entry.entry_shortHand}</h4></div>
+                
                 <div className='entry-text'>Customer: {entry.customer}</div>
-                <div className='entry-text'>Entry Type: {entry.entry_type}</div>
+                <div className='entry-text'>Objekt Typ: {entry.entry_type}</div>
                 <div className='entry-text'>Addresse: {entry.entry_address}, {entry.entry_postal} {entry.entry_city} </div>
-                <div className='entry-text'>Size: {entry.entry_size}</div>
-                <div className='entry-text'>Comment: {entry.entry_comment}</div>
-                <div className='entry-text'>Interested Count: {entry.interest_count}</div>
+                <div className='entry-text'>Groesse: {entry.entry_size}</div>
+                <div className='entry-text'>Beschreibung: {entry.entry_comment}</div>
                 <div className='entry-actions'>
-                <button onClick={() => handleDelete(entry.id)}>Delete</button>
-                <button>Edit</button>
+                  
+                  <button onClick={() => handleDetailsClick(entry)}>Details</button>
                 </div>
-               </div>
+                </div>
+              
+              
             </li>
-))}
+          ))}
         </ul> :
         <p>Keine Einträge gefunden!</p>
-}
+      }
+
+  {selectedEntry && (
+        <div className="details-popup">
+          <div className="details-content">
+            <h2>{selectedEntry.entry_shortHand}</h2>
+            <img className="details-image" src={`http://localhost:3001/entries/image/${selectedEntry.id}`} alt={`Entry ${selectedEntry.id}`} />
+            <p>Anbieter: {selectedEntry.customer}</p>
+            <p>Objekt Typ: {selectedEntry.entry_type}</p>
+            <p>Adresse: {selectedEntry.entry_address}, {selectedEntry.entry_postal} {selectedEntry.entry_city} </p>
+            <p>Groesse: {selectedEntry.entry_size}</p>
+            <p>Beschreibung: {selectedEntry.entry_comment}</p>
+            <p>Erstellt von: {selectedEntry.createdBy}</p>
+            <p>Interesenten: {selectedEntry.interest_count}</p>
+            <button onClick={handleCloseDetails}>Close</button>
+            <button onClick={() => handleDelete(selectedEntry.id)}>Delete</button>
+            {isInterested ? 
+            <button disabled>Interessiert</button> : 
+            <button onClick={handleInterestClick}>Interessiert</button>}
+          </div>
+        </div>
+)}
 </header>
 );
 }

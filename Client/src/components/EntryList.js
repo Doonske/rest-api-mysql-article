@@ -20,7 +20,7 @@ useEffect(() => {
 apiCall();
   const intervalId = setInterval(() => {
     apiCall();
-    }, 5000); // Ruft die Funktion alle 5 Sekunden auf
+    }, 10000); // Ruft die Funktion alle 10 Sekunden auf
 return () => clearInterval(intervalId); // Stoppt das Polling, wenn die Komponente unmountet wird
 }, []);
 
@@ -43,7 +43,7 @@ const handleCloseDetails = () => {
 const handleInterestClick = () => {
   axios.post(`http://localhost:3001/entries/interest/${selectedEntry.id}`)
   .then(() => {
-    setIsInterested(true);
+  setIsInterested(true);
   });
 }
 
